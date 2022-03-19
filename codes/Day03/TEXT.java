@@ -69,7 +69,7 @@ public class TEXT {
                if(y!=0&&y!=1) System.out.println("请重新输入：");
          }while (y!=0&&y!=1);
       x=y==1?false:true;
-      break ;
+      break  ;
     }
 }while(x);
 
