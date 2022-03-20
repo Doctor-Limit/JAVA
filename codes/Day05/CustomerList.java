@@ -19,7 +19,7 @@ public class CustomerList {
     }
     public boolean deleteCustomer(int index){
         if(index<0||index>=total)return false;
-        for(int i=0;i<total-1;i++){
+        for(int i=index;i<total-1;i++){
             customers[i]=customers[i+1];
         }
         customers[--total]=null; //删除index位置，index后的数据往前移动，将原最后一位设置为null

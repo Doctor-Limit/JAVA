@@ -123,9 +123,10 @@ Scanner scanner=new Scanner(System.in);
             case 3:view.deleteCustomer();break;
             case 4: view.listCustomers();break;
             case 5:
-                do{ System.out.println("是否确认退出<y/n>,1代表yes，0代表n");
+                do{
+                    if(y!=0&&y!=1) System.out.print("请重新输入：");
+                    System.out.println("是否确认退出<y/n>,1代表yes，0代表n");
                 y=scanner.nextInt();
-                if(y!=0&&y!=1) System.out.println("请重新输入：");
             }while (y!=0&&y!=1);
                 isFlag=y==1?false:true;
         }
