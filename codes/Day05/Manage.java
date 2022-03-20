@@ -35,8 +35,9 @@ private CustomerList customerList=new CustomerList(10); //定义长度为10的�
     public static void main(String args[]){
         Manage view=new Manage(); //若非静态方法，通过创建新对象来调用方法
         Scanner scanner=new Scanner(System.in);
-
+        int y=0;
         int selection =0;
+        do{
         do{
             view.view();
             selection=scanner.nextInt();
@@ -50,16 +51,13 @@ private CustomerList customerList=new CustomerList(10); //定义长度为10的�
             case 3:
             case 4:
             case 5:
-                int y=0;
+
                 do{ System.out.println("是否确认退出<y/n>,1代表yes，0代表n");
                 y=scanner.nextInt();
                 if(y!=0&&y!=1) System.out.println("请重新输入：");
             }while (y!=0&&y!=1);
 
-
-
         }
-
-
+      }while (y!=1);
     }
 }
