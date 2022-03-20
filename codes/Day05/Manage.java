@@ -46,7 +46,7 @@ Scanner scanner=new Scanner(System.in);
     Customer cust;
     int number;
     do{
-        System.out.println("请选择修改客户编号(-1退出)");
+         System.out.println("请选择修改客户编号(-1退出)");
         number=scanner.nextInt();
         if(number==-1) return;
         cust=customerList.getCustomer(number-1);
