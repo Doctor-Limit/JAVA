@@ -3,15 +3,15 @@ package Day05;
 public class Customer {
 
     private String name;
-    private char sex;
+    private String sex;
     private int age;
     private String phone;
     private String email;
     public void SetName(String name){
         this.name=name;
     }
-    public void SetSex(char sex){
-        this.sex=sex;
+    public void SetSex(String sex){
+       this.sex=sex;
     }
     public void SetAge(int age){
         this.age=age;
@@ -25,7 +25,7 @@ public class Customer {
     public String getName(){
         return name;
     }
-    public char getSex(){
+    public String getSex(){
         return sex;
     }
     public int getAge(){
@@ -39,7 +39,7 @@ public class Customer {
     }
     public Customer(){
     }
-    public Customer(String name,char sex,int age,String phone,String email){
+    public Customer(String name,String sex,int age,String phone,String email){
         this.name=name;
         this.sex=sex;
         this.age=age;
