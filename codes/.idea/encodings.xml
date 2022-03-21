@@ -5,5 +5,11 @@
     <file url="file://$PROJECT_DIR$/Day07/Person.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/Day07/PersonTest.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/Day07/Student.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Day08/Account.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Day08/AccountTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Day08/CheckAccount.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Day08/CheckTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Day08/Person.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Day08/Student.java" charset="GBK" />
   </component>
 </project>
