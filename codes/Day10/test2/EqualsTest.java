@@ -3,7 +3,7 @@ package Day10.test2;
 
 //**************  ==与equals()区别
 /*
-一、  ==的使用
+一、  ==的使用(首先两边变量吧、类型要相同，否则会编译报错)
 1、使用在基本数据类型和引用变量类型
 2、若比较的为基本数据类型变量，比较两变量数据是否相同  例：(char)"A"==65(int) true
    若比较的为引用数据类型变量，比较两对象地址值是否相同，即两引用是否指向同一对象实体
@@ -18,19 +18,24 @@ package Day10.test2;
     说明：Object类中定义equals()与==作用相同
 4、像String Data File 包装类都重写了Object中的equals()方法，重写后比较的不是两引用
    而是实例对象中的内容是否相同
-
+5、通常情况下，定义的类中若使用equals()一般是比较两对象的实体内容是否相同，那么就需要对Object类中
+   equals()方法进行重写
 
 
 
  */
+
+
+
+
 public class EqualsTest {
     public static void main(String[] args) {
 
 
 
+
+
+
     }
-
-
-
 
 }

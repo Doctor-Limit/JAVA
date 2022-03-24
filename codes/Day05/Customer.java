@@ -4,7 +4,7 @@ public class Customer {
 
     private String name;
     private String sex;
-    private int age;
+    int age;
     private String phone;
     private String email;
     public void SetName(String name){
