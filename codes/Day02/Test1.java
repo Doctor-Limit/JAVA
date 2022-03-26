@@ -2,7 +2,7 @@ package Day02;
 
 // 或运算同理 一个或运算符第一个为真时执行第二条语句 两个或运算符第一个为真就跳过第二条语句
 //字符串.equals(array[i]) 判断array[i]中的元素是否与字符串相等
-public class Test {
+public class Test1 {
     public static void main(String args[]){
 
         for(int i=1;i<1000;i++){
