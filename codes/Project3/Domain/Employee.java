@@ -1,6 +1,6 @@
 package Project3.Domain;
 
-public class Employee {
+public class Employee implements Equipment{
     private int id;
     private String name;
     private int age;
@@ -39,4 +39,16 @@ public class Employee {
         this.age=age;
     }
 
+    public String getDetails(){
+        return id+"\t"+name+"\t\t"+age+"\t\t"+salary+"\t";
+    }
+    @Override
+    public String getDescription() {
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return getDetails();
+    }
 }
