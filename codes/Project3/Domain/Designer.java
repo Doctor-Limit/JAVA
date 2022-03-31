@@ -1,6 +1,5 @@
 package Project3.Domain;
 
-import Project3.Service.Status;
 
 public class Designer extends Programmer{
     private double bonus;//½±½ð

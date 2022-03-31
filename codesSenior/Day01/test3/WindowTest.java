@@ -10,6 +10,7 @@ package Day01.test3;
  */
 
 class Window extends Thread{
+
     private static int ticket=100;
 
     @Override
