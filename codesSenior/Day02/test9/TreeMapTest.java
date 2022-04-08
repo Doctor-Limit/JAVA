@@ -15,6 +15,7 @@ public class TreeMapTest {
     //可按key进行排序：自然排序、定制排序
     @Test
     public void test1(){
+        //自然排序
         TreeMap map=new TreeMap();
         map.put("BB","dd");
         map.put("DD","bb");
@@ -26,11 +27,10 @@ public class TreeMapTest {
            Object obj=iterator.next();
             Map.Entry entry=(Map.Entry) obj;
             System.out.println(entry.getKey()+"--->"+entry.getValue());
-
-
         }
-
-
     }
+
+
+
 
 }
