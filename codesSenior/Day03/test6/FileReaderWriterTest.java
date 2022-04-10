@@ -11,13 +11,15 @@ import java.io.*;
  * 2、数据流向：输入流，输出流
  * 3、流的角色：节点流，处理流
  *
+ * 字节流读取非文本文件，字符流读取文本文件
+ *
  * 二、流的体系结构
  *  抽象基类       节点流（文件流）       缓冲流（处理流的一种）
- *  InputStream   FileInputStream     BufferInputStream
+ *  InputStream   FileInputStream     BufferInputStream   字节流
  *  OutputStream  FileOutputStream    BufferOutputStream
- *  Reader        FileReader          BufferReader
- *  Writer        FileWriter          BufferWriter
  *
+ *  Reader        FileReader          BufferReader        字符流
+ *  Writer        FileWriter          BufferWriter
  *
  */
 public class FileReaderWriterTest {
@@ -26,6 +28,8 @@ public class FileReaderWriterTest {
     read():返回读入的字符，若达到文件末尾，返回-1
     异常的处理：为了保证一定可执行关闭操作，要用try-catch-finally
     读入的文件一定要存在，否则会报FileNotFoundException
+
+    不能使用字符类型来处理图片等字节数据
      */
     @Test
     public void test1() {
@@ -171,6 +175,48 @@ public class FileReaderWriterTest {
             if(fr!=null) {
                 try {
                     fr.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    //采用字节流去赋值图片  FileReader-->FileInputStream  FileWriter-->FileOutputStream  char[] -->byte[]
+    //将字符型赋值变量全替换为字节型赋值变量即可
+    @Test
+    public void test5() {
+        FileInputStream fi=null;
+        FileOutputStream fo=null;
+        try {
+            //实例化对象
+            File file=new File("E:\\chap\\codesSenior\\Day03\\test6\\1.jpg");
+            File file1=new File("E:\\chap\\codesSenior\\Day03\\test6\\2.jpg");
+
+            //创建输入输出流对象
+             fi=new FileInputStream(file);
+             fo=new FileOutputStream(file1);
+
+            //进行读入及写出操作
+            byte[] bytes=new byte[10];
+            int len;
+            while ((len=fi.read(bytes))!=-1){
+                fo.write(bytes,0,len);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            //数据流的关闭
+            if(fo!=null) {
+                try {
+                    fo.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if(fi!=null) {
+                try {
+                    fi.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
