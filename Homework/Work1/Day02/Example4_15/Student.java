@@ -6,6 +6,6 @@ public class Student {
         number=n;
     }
     void speak(){
-        System.out.println("Student类的包名是tom.jiafei,我的学号"+number);
+        System.out.println("Student绫荤殑鍖呭悕鏄痶om.jiafei,鎴戠殑瀛﹀彿"+number);
     }
 }

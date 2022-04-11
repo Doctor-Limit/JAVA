@@ -91,7 +91,6 @@ public class RandomAccessFileTest {
 
         bos.close();
         file1.close();
-
     }
 
 }

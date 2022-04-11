@@ -10,7 +10,7 @@ public class PC {
         HD=h;
     }
     public void show(){
-        System.out.println("cpu速度为："+cpu.getSpeed());
-        System.out.println("硬盘容量为："+HD.getAmount());
+        System.out.println("cpu閫熷害涓猴細"+cpu.getSpeed());
+        System.out.println("纭洏瀹归噺涓猴細"+HD.getAmount());
     }
 }
