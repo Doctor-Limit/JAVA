@@ -17,7 +17,7 @@ public class Person extends Creature<String> implements Comparable<String>,MyInt
     private Person(String name){
         this.name=name;
     }
-    Person(String name,int age){
+    public Person(String name, int age){
         this.name=name;
         this.age=age;
     }
