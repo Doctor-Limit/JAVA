@@ -1,4 +1,4 @@
-package work3;
+package work3.test1;
 
 public class Circle {
 private double radius;

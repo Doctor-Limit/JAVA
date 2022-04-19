@@ -1,6 +1,6 @@
-package work3;
+package work3.test1;
 
-import java.util.concurrent.Callable;
+import work3.test1.Circle;
 
 public class Work {
     public static void printCircle(Circle c){
