@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9874683e-f22c-4bb2-8c65-8be8585db405" name="Changes" comment="test11">
-      <change afterPath="$PROJECT_DIR$/../Arithmetic/Day01/test3/ArrayStackDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Arithmetic/Day01/test3/Calculation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Arithmetic/Day01/test3/SingleLinkedListStackDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework/out/production/work3/work3/Circle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework/out/production/work3/work3/Work.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework/work3/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework/work3/test1/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework/work3/Work.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework/work3/test1/Work.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Arithmetic/Day01/test3/PolandNotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Arithmetic/Day01/test3/PolandNotation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

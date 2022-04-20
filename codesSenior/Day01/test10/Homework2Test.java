@@ -28,4 +28,14 @@ public int getCount(String mainStr,String subStr){//获取子字符串(subStr)�
     int count=getCount(s2,s3);
     System.out.println(count);
 }
+
+    @Test
+    public void test2(){
+    label:    for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (i == 1 && j ==1) break label;
+                System.out.println(i+" "+j);
+            }
+        }
+    }
 }

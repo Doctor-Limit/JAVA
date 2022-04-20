@@ -52,4 +52,13 @@ public class Homework3Test {
     String []str4=getMaxSameString1(str1,str2);
     System.out.println(Arrays.toString(str4));
     }
+
+    @Test
+    public void test2(){
+      String s = "";
+      System.out.println(s);
+        System.out.println(s.length());
+
+    }
 }
+
