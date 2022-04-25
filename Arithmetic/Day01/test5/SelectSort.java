@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * ********概述：
+ * ********概述：选择排序
  */
 public class SelectSort {
     public static void main(String[] args) {

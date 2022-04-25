@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * ********概述：
+ * ********概述：归并排序
  */
 public class MergeSort {
     public static void main(String[] args) {
