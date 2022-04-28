@@ -27,7 +27,6 @@ public class HuffmanTree {
 
     // 创建霍夫曼树的方法
     /**
-     *
      * @param arr 要被创建成霍夫曼树的数组
      * @return    霍夫曼树创建好后的根结点
      */
