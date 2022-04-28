@@ -29,7 +29,17 @@ public class ThreadedBinaryTreeDemo {
         System.out.println("10号的后继结点是"+node5.getRight());
 
         // 线索化二叉树后，原先的二叉树遍历方法不再适用
-
+        System.out.println("使用中序线索化的方式遍历中序线索化二叉树\n");
+        threadedBinaryTree.threadedList();
+//
+//        threadedBinaryTree.perThreadedNodes();
+//        System.out.println("使用前序线索化的方式遍历前序线索化二叉树\n");
+//        threadedBinaryTree.perThreadedList();
+//
+//        threadedBinaryTree.postThreadedNodes();
+//        System.out.println("使用后序线索化的方式遍历后序线索化二叉树\n");
+//        threadedBinaryTree.postThreadedList();
+//
 
     }
 }
@@ -43,9 +53,60 @@ class ThreadedBinaryTree {
         this.root = root;
     }
 
-    // 重载实现线索化方法，美观
+    // 前序
+    public void perThreadedNodes() {
+        this.perThreadedNodes(root);
+    }
+
+    // 重载实现中序线索化方法，美观
     public void threadedNodes() {
         this.threadedNodes(root);
+    }
+
+    // 后序
+    public void postThreadedNodes() {
+        this.postThreadedNodes(root);
+    }
+
+     // 遍历前序线索化二叉树
+    public void perThreadedList() {
+        HeroNode1 node = root;
+
+    }
+
+    // 遍历中序线索化二叉树的方法
+    public void threadedList() {
+        // 定义一个变量，存储当前遍历的结点，从root开始
+        HeroNode1 node = root;
+        while (node != null) {
+            // 循环的找到leftType == 1的结点，第一个成立的结点便是线索化的首结点
+            // 后面会随着遍历而变化，因为当leftType == 1时，说明该节点是按照线索化处理后的有效结点
+            while (node.getLeftType() == 0) {
+                node = node.getLeft();
+            }
+            // 打印当前结点
+            System.out.println(node);
+            // 若当前结点的右指针指向的是后继结点，则持续输出
+            while (node.getRightType() == 1) {
+                node = node.getRight();
+                System.out.println(node);
+            }
+            // 替换这个遍历的结点
+            node = node.getRight();
+        }
+    }
+
+    // 后续线索化二叉树
+    public void postThreadedList() {
+        HeroNode1 node = root;
+
+    }
+
+    // 前序线索化
+    public void perThreadedNodes(HeroNode1 node) {
+        if (node == null) {
+            return;
+        }
     }
 
     // 编写对二叉树进行中序线索化的方法
@@ -71,13 +132,18 @@ class ThreadedBinaryTree {
              pre.setRight(node);
              pre.setRightType(1);
          }
-
          pre = node;// 每处理一个结点，让当前结点是下一个结点的前驱结点
 
          // 线索化右子树
          threadedNodes(node.getRight());
-
      }
+
+     // 后续线索化
+    public void postThreadedNodes(HeroNode1 node) {
+        if (node == null) {
+            return;
+        }
+    }
 
     // 前序遍历
     public void preOrder() {
