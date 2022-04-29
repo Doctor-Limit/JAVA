@@ -1,9 +1,6 @@
 package Day01.test9;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -20,6 +17,20 @@ public class HuffmanCode {
 
         byte[] decode = decode(huffmanCodes, bytes);
         System.out.println("原来的字符串"+new String(decode));
+
+ //       // 压缩文件的测试
+//        String srcFile = "E://chap//Arithmetic//Day01//test9//1.jpg";
+//        String dstFile = "E://chap//Arithmetic//test.zip";
+
+//        zipFile(srcFile, dstFile);
+//        System.out.println("压缩文件成功");
+
+        // 测试解压文件
+        String zipFile = "E://chap//Arithmetic//test.zip";
+        String dstFile = "E://chap//Arithmetic//Day01//test9//2.jpg";
+        unZipFile(zipFile, dstFile);
+        System.out.println("解压成功");
+
 
 
 //        System.out.println(contentBytes.length);
@@ -44,6 +55,56 @@ public class HuffmanCode {
 //        byte[] zip = zip(contentBytes, huffmanCodes);
 //        System.out.println(Arrays.toString(zip));
 
+    }
+
+    // 编写方法完成对文件的解压
+    /**
+     *
+     * @param zipFile
+     * @param dstFile
+     */
+    public static void unZipFile(String zipFile, String dstFile) {
+        // 定义文件输入流
+        InputStream is = null;
+        // 定义对象输入流
+        ObjectInputStream ois = null;
+        // 定义文件输出流
+        OutputStream os = null;
+        try {
+            // 创建文件输入流
+            is = new FileInputStream(zipFile);
+            // 创建is相关对象输入流
+            ois = new ObjectInputStream(is);
+            //读取byte数组
+            byte[] huffmanBytes = (byte[]) ois.readObject();
+            // 读取保存的霍夫曼编码表
+            Map<Byte, String > huffmanCodes = (Map<Byte, String>) ois.readObject();
+
+            //解码
+            byte[] bytes = decode(huffmanCodes, huffmanBytes);
+            // 将bytes数组写入到目标文件
+            os = new FileOutputStream(dstFile);
+            // 写数据到目标文件中
+            os.write(bytes);
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }finally {
+            try {
+                os.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                ois.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     // 编写方法对文件进行压缩
@@ -90,7 +151,6 @@ public class HuffmanCode {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
 
