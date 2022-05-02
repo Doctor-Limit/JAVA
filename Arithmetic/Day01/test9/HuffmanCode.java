@@ -26,10 +26,10 @@ public class HuffmanCode {
 //        System.out.println("压缩文件成功");
 
         // 测试解压文件
-        String zipFile = "E://chap//Arithmetic//test.zip";
-        String dstFile = "E://chap//Arithmetic//Day01//test9//2.jpg";
-        unZipFile(zipFile, dstFile);
-        System.out.println("解压成功");
+//        String zipFile = "E://chap//Arithmetic//test.zip";
+//        String dstFile = "E://chap//Arithmetic//Day01//test9//2.jpg";
+//        unZipFile(zipFile, dstFile);
+//        System.out.println("解压成功");
 
 
 
