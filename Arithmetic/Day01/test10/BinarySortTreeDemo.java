@@ -236,6 +236,32 @@ class Node {
         }
     }
 
+    // 左旋转(右子树高)
+    private void leftRotate() {
+        // 1、创建新结点，以当前结点的值作为值
+        Node newNode = new Node(value);
+        // 2、把新结点的左子树设置为当前结点的左子树
+        newNode.left = left;
+        // 3、把新的结点的右子树设置成当前结点的右子树的左子树
+        newNode.right = right.left;
+        // 4、把当前结点的值替换成当前结点的右子结点的值
+        value = right.value;
+        // 5、把当前结点的右子树设置成当前结点右子树的右子树
+        right = right.right;
+        // 6、把当前结点的左子结点设置成新的结点
+        left = newNode;
+    }
+
+    // 右旋转(左子树高)
+    private void rightRotate() {
+        Node newNode = new Node(value); // 1、创建新结点，以当前结点的值作为值
+        newNode.right = right;  // 2、把新结点的右子树设置为当前结点的右子树
+        newNode.left = left.right;// 3、把新的结点的左子树设置成当前结点的左子树的右子树
+        value = left.value;        // 4、把当前结点的值替换成当前结点的左子结点的值
+        left = left.left;        // 5、把当前结点的左子树设置成当前结点左子树的左子树
+        right = newNode;// 6、把当前结点的右子结点设置成新的结点
+    }
+
     // 添加结点的方法
     // 递归形式添加节点
     public void add(Node node) {
@@ -256,6 +282,24 @@ class Node {
             }else {
                 this.right.add(node);// 递归向右子树添加
             }
+        }
+        // 当添加完一个结点后，若 |右子树的高度 - 左子树的高度| > 1, 则需要左旋
+        if (rightHeight() - leftHeight() > 1) {
+            // 若当前结点的右子树的左子树高度大于当前结点的右子树的右子树高度
+            if (right != null && right.leftHeight() > right.rightHeight()) {
+                right.rightRotate();// 对当前结点的右结点进行右旋
+            }
+            leftRotate();// 左旋转
+            return;// 已经平衡，不能继续往下操作
+        }
+        // 当添加完一个结点后，若 |左子树的高度 - 右子树的高度| > 1, 则需要右旋
+        if (leftHeight() - rightHeight() > 1) {
+            // 若当前结点的左子树的右子树的高度大于当前结点的左子树的左子树高度
+            if (left != null && left.rightHeight() > left.leftHeight()) {
+                // 先对当前结点的左结点进行左旋转
+                left.leftRotate();
+            }// 完成左旋后再进行右旋
+            rightRotate();// 右旋转
         }
 
     }
